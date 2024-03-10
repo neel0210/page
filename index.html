@@ -8,6 +8,7 @@
   body, html {
     height: 100%;
     margin: 0;
+    padding: 0;
     background-color: #000; /* AMOLED black */
   }
   #videoBG {
@@ -17,15 +18,19 @@
     transform: translate(-50%, -50%);
     min-width: 100%;
     min-height: 100%;
-    z-index: -1;
+    z-index: 1;
   }
   .menu {
     display: none;
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    z-index: 1;
+    justify-content: center;
+    align-items: center;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 2;
+    background: none; /* No background initially */
   }
   .menu a {
     color: white;
@@ -39,8 +44,8 @@
     transition: transform 0.5s, opacity 0.5s;
   }
   .menu a.snap {
-    opacity: 1;
     transform: scale(1);
+    opacity: 1;
   }
 </style>
 </head>
@@ -62,16 +67,24 @@
   const video = document.getElementById('videoBG');
   video.oncanplaythrough = function() {
     setTimeout(() => {
-      video.pause();
-      video.style.display = 'none';
-      const menuLinks = document.querySelectorAll('.menu a');
-      menuLinks.forEach((link, index) => {
-        // Delay each link to create a snapping effect
-        setTimeout(() => {
-          link.classList.add('snap');
-        }, index * 150);
+      video.style.opacity = 0; // Fade out the video
+      video.addEventListener('transitionend', function() {
+        video.style.display = 'none';
+        const menu = document.querySelector('.menu');
+        menu.style.backgroundImage = "url('BIN/bg.png')"; // Set background image after video
+        menu.style.backgroundSize = "cover";
+        menu.style.backgroundPosition = "center";
+        menu.style.backgroundRepeat = "no-repeat";
+        const menuLinks = document.querySelectorAll('.menu a');
+        menuLinks.forEach((link, index) => {
+          // Delay each link to create a snapping effect
+          setTimeout(() => {
+            link.classList.add('snap');
+          }, index * 150);
+        });
+        menu.style.display = 'flex';
       });
-      document.querySelector('.menu').style.display = 'block';
+      video.style.transition = 'opacity 1s ease';
     }, 7000); // 7 seconds delay
   };
 </script>
