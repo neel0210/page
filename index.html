@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Interactive AMOLED Menu</title>
+<style>
+  body, html {
+    height: 100%;
+    margin: 0;
+    background-color: #000; /* AMOLED black */
+  }
+  #videoBG {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    min-width: 100%;
+    min-height: 100%;
+    z-index: -1;
+  }
+  .menu {
+    display: none;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 1;
+  }
+  .menu a {
+    color: white;
+    background-color: #333;
+    padding: 10px 20px;
+    margin: 10px;
+    text-decoration: none;
+    border-radius: 5px;
+    opacity: 0; /* Initially hidden */
+    transform: scale(0);
+    transition: transform 0.5s, opacity 0.5s;
+  }
+  .menu a.snap {
+    opacity: 1;
+    transform: scale(1);
+  }
+</style>
+</head>
+<body>
+
+<video id="videoBG" autoplay muted>
+  <source src="BIN/title.mp4" type="video/mp4">
+  Your browser does not support HTML5 video.
+</video>
+
+<div class="menu">
+  <a href="https://www.youtube.com" target="_blank">YouTube</a>
+  <a href="https://www.github.com" target="_blank">GitHub</a>
+  <a href="downloads.html" target="_blank">Downloads</a>
+  <a href="cv.html" target="_blank">CV</a>
+</div>
+
+<script>
+  const video = document.getElementById('videoBG');
+  video.oncanplaythrough = function() {
+    setTimeout(() => {
+      video.pause();
+      video.style.display = 'none';
+      const menuLinks = document.querySelectorAll('.menu a');
+      menuLinks.forEach((link, index) => {
+        // Delay each link to create a snapping effect
+        setTimeout(() => {
+          link.classList.add('snap');
+        }, index * 150);
+      });
+      document.querySelector('.menu').style.display = 'block';
+    }, 7000); // 7 seconds delay
+  };
+</script>
+
+</body>
+</html>
