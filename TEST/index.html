@@ -9,6 +9,37 @@
     <!-- Bootstrap Icons  -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
 </head>
+<style>
+        /* Change color for all social icons on hover */
+        .social-icon:hover {
+            color: #43c6ff; /* Replace with your desired hover color */
+        }
+
+        /* Footer social icons hover color */
+        #footer-sections .sqs-svg-icon--wrapper {
+            transition: ease-in-out 300ms;
+        }
+
+        #footer-sections .sqs-svg-icon--wrapper:hover {
+            color: black; /* Change to black */
+        }
+    </style>
+    <script>
+        // Function to perform the Thanos snap effect
+        function thanosSnap() {
+            const buttons = document.querySelectorAll('.buttons a');
+            buttons.forEach((button) => {
+                button.addEventListener('click', () => {
+                    // Add your Thanos snap animation logic here
+                    // For example, fade out the button or hide it
+                    button.style.opacity = 0;
+                });
+            });
+        }
+
+        // Call the function when the page loads
+        window.addEventListener('load', thanosSnap);
+    </script>
 <body>
     <video autoplay loop muted>
         <source src="BG BY CWS.mp4">
@@ -17,30 +48,23 @@
         <div class="container">
             <a href="#" class="logo">Neel's Paradise</a>
             <ul>
-                <li><a href="#">Home</a></li>
-                <li><a href="#">Services</a></li>
-                <li><a href="#">Products</a></li>
-                <li><a href="#">Plans</a></li>
-                <li><a href="#">Contact</a></li>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="https://github.com/neel0210">Github</a></li>
+                <li><a href="http://www.youtube.com/@the_lord_hokage">Youtube</a></li>
+                <li><a href="CV.html">Resume</a></li>
+                <li><a href="https://neel0210.github.io/">Downloads</a></li>
             </ul>
         </div>
     </nav>
 
-    <main class="container">
+		<main class="container">
         <div class="page-content">
             <div class="inner-content">
-                <h1 class="heading">Sukuna</h1>
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Maiores ullam, aliquid in vel quo eius possimus magni quibusdam ex perferendis, natus suscipit voluptas, debitis unde vitae omnis saepe ratione ea?</p>
+                <h1 class="heading">Neel0210</h1>
+                <p>LOL</p>
                 <div class="buttons">
-                    <a href="#" class="active">Learn more</a>
-                    <a href="#">Browse</a>
-                </div>
-
-                <div class="social-links">
-                    <a href="#" class="bi bi-facebook"></a>
-                    <a href="#" class="bi bi-youtube"></a>
-                    <a href="#" class="bi bi-instagram"></a>
-                    <a href="#" class="bi bi-linkedin"></a>
+                    <a href="https://www.instagram.com/neel_0210/">Instagram</a>
+                    <a href="BIN/nofb.html">Facebook</a>
                 </div>
             </div>
         </div>
