@@ -1,93 +1,76 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Interactive AMOLED Menu</title>
-<style>
-  body, html {
-    height: 100%;
-    margin: 0;
-    padding: 0;
-    background-color: #000; /* AMOLED black */
-  }
-  #videoBG {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    min-width: 100%;
-    min-height: 100%;
-    z-index: 1;
-  }
-  .menu {
-    display: none;
-    justify-content: center;
-    align-items: center;
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    z-index: 2;
-    background: none; /* No background initially */
-  }
-  .menu a {
-    color: white;
-    background-color: #333;
-    padding: 10px 20px;
-    margin: 10px;
-    text-decoration: none;
-    border-radius: 5px;
-    opacity: 0; /* Initially hidden */
-    transform: scale(0);
-    transition: transform 0.5s, opacity 0.5s;
-  }
-  .menu a.snap {
-    transform: scale(1);
-    opacity: 1;
-  }
-</style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Neel's Paradise</title>
+    <!-- CSS File -->
+    <link rel="stylesheet" href="styles.css">
+    <!-- Bootstrap Icons -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <style>
+        /* Change color for all social icons on hover */
+        .social-icon:hover {
+            color: #43c6ff; /* Replace with your desired hover color */
+        }
+
+        /* Footer social icons hover color */
+        #footer-sections .sqs-svg-icon--wrapper {
+            transition: ease-in-out 300ms;
+        }
+
+        #footer-sections .sqs-svg-icon--wrapper:hover {
+            color: black; /* Change to black */
+        }
+    </style>
+    <script>
+        // Function to perform the Thanos snap effect
+        function thanosSnap() {
+            const buttons = document.querySelectorAll('.buttons a');
+            buttons.forEach((button) => {
+                button.addEventListener('click', () => {
+                    // Add your Thanos snap animation logic here
+                    // For example, fade out the button or hide it
+                    button.style.opacity = 0;
+                    setTimeout(() => {
+                        // Redirect to the desired page after 2 seconds
+                        window.location.href = button.getAttribute('href');
+                    }, 2000); // 2000 milliseconds = 2 seconds
+                });
+            });
+        }
+
+        // Call the function when the page loads
+        window.addEventListener('load', thanosSnap);
+    </script>
 </head>
 <body>
+    <video autoplay loop muted>
+        <source src="BIN/BGV.mp4">
+    </video>
+    <nav class="navbar">
+        <div class="container">
+            <a href="#" class="logo">Neel's Paradise</a>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="https://github.com/neel0210">Github</a></li>
+                <li><a href="BIN/CV.html">CV</a></li>
+                <li><a href="https://neel0210.github.io/">Downloads</a></li>
+            </ul>
+        </div>
+    </nav>
 
-<video id="videoBG" autoplay muted>
-  <source src="BIN/title.mp4" type="video/mp4">
-  Your browser does not support HTML5 video.
-</video>
-
-<div class="menu">
-  <a href="https://www.youtube.com" target="_blank">YouTube</a>
-  <a href="https://www.github.com" target="_blank">GitHub</a>
-  <a href="downloads.html" target="_blank">Downloads</a>
-  <a href="cv.html" target="_blank">CV</a>
-</div>
-
-<script>
-  const video = document.getElementById('videoBG');
-  video.oncanplaythrough = function() {
-    setTimeout(() => {
-      video.style.opacity = 0; // Fade out the video
-      video.addEventListener('transitionend', function() {
-        video.style.display = 'none';
-        const menu = document.querySelector('.menu');
-        menu.style.backgroundImage = "url('BIN/bg.png')"; // Set background image after video
-        menu.style.backgroundSize = "cover";
-        menu.style.backgroundPosition = "center";
-        menu.style.backgroundRepeat = "no-repeat";
-        const menuLinks = document.querySelectorAll('.menu a');
-        menuLinks.forEach((link, index) => {
-          // Delay each link to create a snapping effect
-          setTimeout(() => {
-            link.classList.add('snap');
-          }, index * 150);
-        });
-        menu.style.display = 'flex';
-      });
-      video.style.transition = 'opacity 1s ease';
-    }, 7000); // 7 seconds delay
-  };
-</script>
-
+    <main class="container">
+        <div class="page-content">
+            <div class="inner-content">
+                <h1 class="heading">Neel0210</h1>
+                <p></p>
+                <div class="buttons">
+                    <a href="https://www.instagram.com/neel_0210/">Instagram</a>
+                    <a href="BIN/FB.html">Facebook</a>
+                </div>
+            </div>
+        </div>
+    </main>
 </body>
 </html>
