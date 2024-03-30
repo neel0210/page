@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -8,42 +9,8 @@
     <link rel="stylesheet" href="styles.css">
     <!-- Bootstrap Icons -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
-    <style>
-        /* Change color for all social icons on hover */
-        .social-icon:hover {
-            color: #43c6ff; /* Replace with your desired hover color */
-        }
-
-        /* Footer social icons hover color */
-        #footer-sections .sqs-svg-icon--wrapper {
-            transition: ease-in-out 300ms;
-        }
-
-        #footer-sections .sqs-svg-icon--wrapper:hover {
-            color: black; /* Change to black */
-        }
-    </style>
-    <script>
-        // Function to perform the Thanos snap effect
-        function thanosSnap() {
-            const buttons = document.querySelectorAll('.buttons a');
-            buttons.forEach((button) => {
-                button.addEventListener('click', () => {
-                    // Add your Thanos snap animation logic here
-                    // For example, fade out the button or hide it
-                    button.style.opacity = 0;
-                    setTimeout(() => {
-                        // Redirect to the desired page after 2 seconds
-                        window.location.href = button.getAttribute('href');
-                    }, 2000); // 2000 milliseconds = 2 seconds
-                });
-            });
-        }
-
-        // Call the function when the page loads
-        window.addEventListener('load', thanosSnap);
-    </script>
 </head>
+
 <body>
     <video autoplay loop muted>
         <source src="BIN/BGV.mp4">
@@ -68,10 +35,10 @@
                 <div class="buttons">
                     <a href="https://www.instagram.com/neel_0210/">Instagram</a>
                     <a href="projects.html">Projects</a>
-                    <a href="BIN/FB.html">Facebook</a>
                 </div>
             </div>
         </div>
     </main>
 </body>
+
 </html>
