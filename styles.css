@@ -171,14 +171,14 @@ video {
 }
 
 .card {
-	font-family: 'Angry Birds', sans-serif;
-	font-size: 13px;
+    font-family: 'Angry Birds', sans-serif;
+    font-size: 13px;
     width: 225px;
     height: 245px;
-    background: rgba(255, 255, 255, 0.5);
-    backdrop-filter: blur(1px);
+    background: rgba(0, 0, 0, 0.5);
+    backdrop-filter: blur(5px);
     border-radius: 10px;
-	overflow: hidden;
+    overflow: hidden;
     padding: 20px;
     box-sizing: border-box;
     transition: 0.3s;
