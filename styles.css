@@ -166,3 +166,35 @@ video {
 .page-content .social-links a:hover::after { 
     height: 100%;
 }
+
+.container {
+    display: flex;
+    justify-content: space-between;
+}
+
+.card {
+    width: 225px; /* adjust as needed */
+    height: 225px; /* adjust as needed */
+    background: rgba(255, 255, 255, 0.5);
+    backdrop-filter: blur(10px);
+    border-radius: 10px;
+    padding: 20px;
+    box-sizing: border-box;
+    transition: 0.3s;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    margin: 20px; /* adjust as needed */
+}
+
+.card:hover {
+    transform: scale(1.05);
+}
+
+.row {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
