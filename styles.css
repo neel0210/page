@@ -1,5 +1,7 @@
 /* Font Family  */
 @font-face { font-family: 'AngryBirds'; src: url('BIN/fonts/angrybirds-regular.ttf') format('truetype');}
+@font-face { font-family: 'naruto'; src: url('BIN/fonts/naruto.ttf') format('truetype');}
+
 
 *, ::before, ::after {
     margin: 0;
@@ -171,7 +173,7 @@ video {
 }
 
 .card {
-    font-family: 'Angry Birds', sans-serif;
+    font-family: 'naruto', sans-serif;
     font-size: 13px;
     width: 225px;
     height: 245px;
@@ -191,8 +193,9 @@ video {
 }
 
 h2, p {
-    font-family: 'Angry Birds', sans-serif;
-	font-size: 13px;
+    font-family: 'naruto', sans-serif;
+    font-size: 23px;
+    margin: 0;
 }
 
 .card:hover {
