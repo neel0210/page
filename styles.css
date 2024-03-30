@@ -181,9 +181,10 @@ video {
     backdrop-filter: blur(5px);
     border-radius: 10px;
     overflow: hidden;
+	position: relative;
     padding: 20px;
     box-sizing: border-box;
-    transition: 0.3s;
+	transition: width 0.3s ease-in-out;
     display: block;
     flex-direction: column;
     justify-content: center;
@@ -193,13 +194,32 @@ video {
 }
 
 h2, p {
-    font-family: 'naruto', sans-serif;
-    font-size: 23px;
+    font-family: 'AngryBirds', sans-serif;
+    font-size: 15px;
+	color: #fff;
     margin: 0;
+}
+
+.content {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-color: rgba(0, 0, 0, 0.7); /* Semi-transparent background color */
+    padding: 20px;
+    box-sizing: border-box;
+    opacity: 0; /* Initially hide content */
+    transition: opacity 0.3s ease-in-out; /* Add transition for smooth opacity change */
 }
 
 .card:hover {
     transform: scale(1.05);
+	width: 155px;
+}
+
+.card:hover .content {
+    opacity: 1;
 }
 
 .row {
@@ -213,4 +233,12 @@ h2, p {
     height: auto;
     border-radius: 100%;
 	object-fit: cover;
+	display: block;
+    margin: 0 auto 15px; /* Center the image */
+	transition: transform 0.3s ease-in-out;
+}
+
+.card a {
+    pointer-events: auto; /* Ensure links are clickable */
+    /* other link styles... */
 }
