@@ -242,3 +242,70 @@ h2, p {
     pointer-events: auto; /* Ensure links are clickable */
     /* other link styles... */
 }
+
+.content-container {
+    height: calc(100vh - 200px); /* Adjust the height based on your navbar's height */
+    overflow-y: auto; /* Enable vertical scrolling */
+    padding-top: 56px; /* Adjust padding to avoid content being hidden behind the navbar */
+}
+
+@media only screen and (max-width: 768px) {
+    video {
+        position: absolute;
+        left: 0;
+        top: 0;
+        height: 100%;
+        width: 100%;
+        object-fit: cover;
+        pointer-events: none;
+        z-index: -1;
+        transition: 1s;
+    }
+    .container {
+        max-width: fit-content;
+        margin: auto;
+        flex-direction: column;
+        align-items: flex-start;
+    }
+    
+    .navbar {
+        padding: 12px 10px;
+    }
+    
+    .navbar .container {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+    
+    .navbar .logo {
+        font-family: 'AngryBirds', sans-serif;
+        text-decoration: none;
+        font-size: 2rem;
+    }
+    
+    .navbar ul {
+        list-style-type: none;
+        display: flex;
+        /* flex-direction: column; */
+        /* align-items: flex-start; */
+    }
+    
+    .navbar ul a {
+        display: block;
+        text-decoration: none;
+        margin: 10px 0;
+        padding: 8px 16px;
+        font-family: 'AngryBirds', sans-serif;
+        position: relative;
+    }
+    
+    .navbar ul:has(a:hover) a:not(:hover) {
+        filter: blur(10px);
+    }
+
+    .navbar ul li {
+        margin: 10px 0;
+    }
+    
+  }
