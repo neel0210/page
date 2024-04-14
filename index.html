@@ -5,14 +5,46 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Neel's Paradise</title>
-	<link rel="shortcut icon" type="image/png" href="BIN/PNG/TS.png">
+    <link rel="shortcut icon" type="image/png" href="BIN/PNG/TS.png">
     <!-- CSS File -->
     <link rel="stylesheet" href="styles.css">
     <!-- Bootstrap Icons -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <style>
+        /* CSS for loading video */
+        .loading-gif {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: #000; /* Change background color to black */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            z-index: 9999; /* Ensure it's above other elements */
+        }
+
+        .loading-gif video {
+            width: 200px; /* Adjust the size of the loading video */
+            height: auto;
+        }
+
+        /* Hide the loading GIF after 4 seconds */
+        .hide {
+            display: none;
+        }
+    </style>
 </head>
 
 <body>
+    <!-- GIF -->
+    <div class="loading-gif">
+        <video autoplay loop muted>
+            <source src="BIN/PNG/1.mp4" type="video/mp4">
+        </video>
+    </div>
+
     <video autoplay loop muted>
         <source src="BIN/BGV.mp4">
     </video>
@@ -28,7 +60,7 @@
         </div>
     </nav>
 
-    <main class="container">
+    <main class="container hide">
         <div class="page-content">
             <div class="inner-content">
                 <h1 class="heading">Neel0210</h1>
@@ -40,6 +72,14 @@
             </div>
         </div>
     </main>
+
+    <script>
+        // Wait for 4 seconds and then hide the loading GIF and show the main content
+        setTimeout(function () {
+            document.querySelector('.loading-gif').classList.add('hide');
+            document.querySelector('main').classList.remove('hide');
+        }, 4000);
+    </script>
 </body>
 
 </html>
