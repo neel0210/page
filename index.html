@@ -53,9 +53,9 @@
             <a href="#" class="logo">GOKU's Paradise</a>
             <ul>
                 <li><a href="index.html">Home</a></li>
-                <li><a href="https://github.com/neel0210">Github</a></li>
-                <li><a href="BIN/CV.html">CV</a></li>
-                <li><a href="https://neel0210.github.io/">Downloads</a></li>
+				<li><a href="#" onclick="showLoadingAndRedirect('BIN/PNG/2.mp4', 'https://github.com/neel0210')">Github</a></li>
+				<li><a href="#" onclick="showLoadingAndRedirect('BIN/PNG/2.mp4', 'BIN/CV.html')">CV</a></li>
+				<li><a href="#" onclick="showLoadingAndRedirect('BIN/PNG/2.mp4', 'https://neel0210.github.io/')">Downloads</a></li>
             </ul>
         </div>
     </nav>
@@ -66,20 +66,14 @@
                 <h1 class="heading">Neel0210</h1>
                 <p></p>
                 <div class="buttons">
-                    <a href="https://www.instagram.com/neel_0210/">Instagram</a>
-                    <a href="projects.html">Projects</a>
+                    <a href="#" onclick="showLoadingAndRedirect('BIN/PNG/2.mp4', 'https://www.instagram.com/neel_0210/')">Instagram</a>
+					<a href="#" onclick="showLoadingAndRedirect('BIN/PNG/2.mp4', 'projects.html')">Projects</a>
+					<a href="#" onclick="showLoadingAndRedirect('BIN/PNG/2.mp4', 'https://twitter.com/Neel_0210')">X</a>
                 </div>
             </div>
         </div>
     </main>
-
-    <script>
-        // Wait for 4 seconds and then hide the loading GIF and show the main content
-        setTimeout(function () {
-            document.querySelector('.loading-gif').classList.add('hide');
-            document.querySelector('main').classList.remove('hide');
-        }, 2700);
-    </script>
+	<script src="script.js"></script>
 </body>
 
 </html>
