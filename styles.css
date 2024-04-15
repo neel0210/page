@@ -323,7 +323,13 @@ h2, p {
     }
     
     .page-content .inner-content .heading {
-        font-size: 5rem;
+        font-size: 15vw;
+    }
+
+    .page-content .buttons {
+        display: ruby-text;
+        justify-content: center;
+        margin-top: 20px;
     }
     
   }
