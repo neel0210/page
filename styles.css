@@ -92,7 +92,7 @@ video {
 }
 
 .page-content .buttons {
-    display: flex;
+    display: ruby-text;
     justify-content: center;
     margin-top: 20px;
 }
