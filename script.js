@@ -70,6 +70,15 @@ window.addEventListener('focus', function() {
     }
 });
 
+// Detect back navigation to the index page
+window.addEventListener('popstate', function(event) {
+    // Check if the user navigated back to the index page
+    if (window.location.pathname === '/index.html') {
+        // Reset the flag to indicate that the loading animation should be shown again
+        loadingAnimationShown = false;
+    }
+});
+
 // Add touch event listeners to the buttons
 document.querySelectorAll('.buttons a').forEach(button => {
     button.addEventListener('click', () => {
