@@ -1,37 +1,32 @@
 // Wait for 2.7 seconds and then hide the loading GIF and show the main content
 setTimeout(function() {
-    document.querySelector('.loading-gif').classList.add('hide');
-    document.querySelector('main').classList.remove('hide');
-}, 2700);
+    hideLoading();
+}, 2500);
 
 // Function to show loading GIF for 3 seconds before redirecting
-function showLoadingAndRedirect(videoSrc, nextPage) {
-    changeLoadingVideo(videoSrc); // Change loading video source
+function showLoadingAndRedirect(loadingGifPath, redirectUrl) {
+    changeLoadingGif(loadingGifPath); // Change loading GIF source
     showLoading(); // Show loading GIF
+    // Wait for the loading GIF to be shown and then redirect after 3 seconds
     setTimeout(function() {
-        window.location.href = nextPage; // Redirect to the linked page after 3 seconds
-    }, 3000);
+        window.location.href = redirectUrl; // Redirect to the linked page after 3 seconds
+    }, 2500);
 }
 
-// Function to change loading video source
-function changeLoadingVideo(videoSrc) {
-    var loadingVideo = document.querySelector('.loading-gif video');
-    loadingVideo.pause(); // Pause the current video
-    loadingVideo.src = videoSrc;
-    loadingVideo.load(); // Load the new video source
-    loadingVideo.play(); // Start playing the new video
+// Function to change loading GIF source
+function changeLoadingGif(gifSrc) {
+    var loadingGif = document.querySelector('.loading-gif img');
+    loadingGif.src = gifSrc;
 }
 
 // Function to show loading GIF and hide main content
 function showLoading() {
-    document.querySelector('.loading-gif').classList.remove('hide');
+    document.querySelector('.loading-gif').style.display = 'flex';
     document.querySelector('main').classList.add('hide');
 }
 
 // Function to hide loading GIF and show main content after a delay
 function hideLoading() {
-    setTimeout(function() {
-        document.querySelector('.loading-gif').classList.add('hide');
-        document.querySelector('main').classList.remove('hide');
-    }, 2700);
+    document.querySelector('.loading-gif').style.display = 'none';
+    document.querySelector('main').classList.remove('hide');
 }
