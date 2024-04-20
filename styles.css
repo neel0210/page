@@ -1,9 +1,17 @@
-/* Font Family  */
-@font-face { font-family: 'AngryBirds'; src: url('BIN/fonts/angrybirds-regular.ttf') format('truetype');}
-@font-face { font-family: 'naruto'; src: url('BIN/fonts/naruto.ttf') format('truetype');}
+/* Font Family */
+@font-face {
+    font-family: 'AngryBirds';
+    src: url('BIN/fonts/angrybirds-regular.ttf') format('truetype');
+}
 
+@font-face {
+    font-family: 'naruto';
+    src: url('BIN/fonts/naruto.ttf') format('truetype');
+}
 
-*, ::before, ::after {
+*,
+*::before,
+*::after {
     margin: 0;
     padding: 0;
     transition: .3s;
@@ -13,93 +21,41 @@
 
 /* Adjust layout for smaller screens */
 @media only screen and (max-width: 768px) {
-    /* Example: Adjust navigation menu for smaller screens */
     .navbar ul {
         flex-direction: column;
         text-align: center;
     }
 
-    /* Example: Make the logo smaller on smaller screens */
     .navbar .logo {
         font-size: 1.5rem;
     }
 
-    /* Example: Adjust the size of the loading video for smaller screens */
     .loading-gif video {
         width: 150px;
     }
 }
-
-/* Adjust layout for smaller screens */
-@media only screen and (max-width: 768px) {
-    .container {
-        max-width: 90%;
-        margin: auto;
-    }
-    
-    .navbar {
-        padding: 10px;
-    }
-    
-    .navbar .logo {
-        font-size: 1.5rem;
-    }
-    
-    .navbar ul {
-        flex-direction: column;
-        align-items: center;
-    }
-    
-    .navbar ul a {
-        margin: 5px 0;
-    }
-
-    .page-content .inner-content .heading {
-        font-size: 8rem;
-    }
-
-    .page-content .buttons {
-        display: flex;
-        flex-wrap: wrap;
-        justify-content: center;
-    }
-
-    .page-content .buttons a {
-        margin: 5px;
-    }
-
-    .page-content .social-links {
-        margin-top: 3rem;
-    }
-
-    .page-content .social-links a {
-        margin: 0 5px;
-    }
-
-    .card {
-        width: calc(50% - 40px);
-        margin: 20px 0;
-    }
-
-    .round-image {
-        width: 80%;
-    }
-}
-
 
 .responsive-gif {
     max-width: 100%;
     height: auto;
 }
 
+.loading-gif {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #000;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 9999;
+}
+
 .loading-gif video {
-    width: 100%; /* Adjust the width to fill the container */
-    height: 100%; /* Adjust the height to fill the container */
-    object-fit: contain; /* Ensure the entire video is visible */
-    position: absolute; /* Position the video within the container */
-    top: 50%; /* Center the video vertically */
-    left: 50%; /* Center the video horizontally */
-    transform: translate(-50%, -50%); /* Center the video precisely */
+    width: 100%;
+    height: auto;
 }
 
 .hide {
@@ -110,8 +66,8 @@ video {
     position: absolute;
     left: 0;
     top: 0;
-    height: 100%;
     width: 100%;
+    height: 100%;
     object-fit: cover;
     pointer-events: none;
     z-index: -1;
@@ -134,7 +90,7 @@ video {
 }
 
 .navbar .logo {
-	font-family: 'AngryBirds', sans-serif;
+    font-family: 'AngryBirds', sans-serif;
     text-decoration: none;
     font-size: 2rem;
 }
@@ -173,7 +129,7 @@ video {
 }
 
 .page-content .buttons {
-    display: ruby-text;
+    display: flex;
     justify-content: center;
     margin-top: 20px;
 }
@@ -214,7 +170,7 @@ video {
     z-index: -1;
 }
 
-.page-content .buttons a:nth-child(2):hover::before { 
+.page-content .buttons a:nth-child(2):hover::before {
     left: 100%;
 }
 
@@ -258,7 +214,7 @@ video {
     z-index: -1;
 }
 
-.page-content .social-links a:hover::after { 
+.page-content .social-links a:hover::after {
     height: 100%;
 }
 
@@ -276,10 +232,10 @@ video {
     backdrop-filter: blur(5px);
     border-radius: 10px;
     overflow: hidden;
-	position: relative;
+    position: relative;
     padding: 20px;
     box-sizing: border-box;
-	transition: width 0.3s ease-in-out;
+    transition: width 0.3s ease-in-out;
     display: block;
     flex-direction: column;
     justify-content: center;
@@ -288,10 +244,11 @@ video {
     margin: 20px;
 }
 
-h2, p {
+h2,
+p {
     font-family: 'AngryBirds', sans-serif;
     font-size: 15px;
-	color: #fff;
+    color: #fff;
     margin: 0;
 }
 
@@ -301,16 +258,16 @@ h2, p {
     position: absolute;
     top: 0;
     left: 0;
-    background-color: rgba(0, 0, 0, 0.7); /* Semi-transparent background color */
+    background-color: rgba(0, 0, 0, 0.7);
     padding: 20px;
     box-sizing: border-box;
-    opacity: 0; /* Initially hide content */
-    transition: opacity 0.3s ease-in-out; /* Add transition for smooth opacity change */
+    opacity: 0;
+    transition: opacity 0.3s ease-in-out;
 }
 
 .card:hover {
     transform: scale(1.05);
-	width: 155px;
+    width: 155px;
 }
 
 .card:hover .content {
@@ -327,65 +284,51 @@ h2, p {
     width: 85%;
     height: auto;
     border-radius: 100%;
-	object-fit: cover;
-	display: block;
-    margin: 0 auto 15px; /* Center the image */
-	transition: transform 0.3s ease-in-out;
+    object-fit: cover;
+    display: block;
+    margin: 0 auto 15px;
+    transition: transform 0.3s ease-in-out;
 }
 
 .card a {
-    pointer-events: auto; /* Ensure links are clickable */
-    /* other link styles... */
+    pointer-events: auto;
 }
 
 .content-container {
-    height: calc(100vh - 200px); /* Adjust the height based on your navbar's height */
-    overflow-y: auto; /* Enable vertical scrolling */
-    padding-top: 56px; /* Adjust padding to avoid content being hidden behind the navbar */
+    height: calc(100vh - 200px);
+    overflow-y: auto;
+    padding-top: 56px;
 }
 
 @media only screen and (max-width: 768px) {
-    video {
-        position: absolute;
-        left: 0;
-        top: 0;
-        height: 100%;
-        width: 100%;
-        object-fit: cover;
-        pointer-events: none;
-        z-index: -1;
-        transition: 1s;
-    }
     .container {
         max-width: fit-content;
         margin: auto;
         flex-direction: column;
         align-items: flex-start;
     }
-    
+
     .navbar {
         padding: 12px 10px;
     }
-    
+
     .navbar .container {
         display: flex;
         justify-content: space-between;
         align-items: center;
     }
-    
+
     .navbar .logo {
         font-family: 'AngryBirds', sans-serif;
         text-decoration: none;
         font-size: 2rem;
     }
-    
+
     .navbar ul {
         list-style-type: none;
         display: flex;
-        /* flex-direction: column; */
-        /* align-items: flex-start; */
     }
-    
+
     .navbar ul a {
         display: block;
         text-decoration: none;
@@ -394,7 +337,7 @@ h2, p {
         font-family: 'AngryBirds', sans-serif;
         position: relative;
     }
-    
+
     .navbar ul:has(a:hover) a:not(:hover) {
         filter: blur(10px);
     }
@@ -402,15 +345,14 @@ h2, p {
     .navbar ul li {
         margin: 10px 0;
     }
-    
+
     .page-content .inner-content .heading {
         font-size: 15vw;
     }
 
     .page-content .buttons {
-        display: ruby-text;
+        display: flex;
         justify-content: center;
         margin-top: 20px;
     }
-    
-  }
+}
