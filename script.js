@@ -39,3 +39,16 @@ function hideLoading() {
     document.querySelector('.loading-gif').style.display = 'none';
     document.querySelector('main').classList.remove('hide');
 }
+
+// Add touch event listeners to the buttons
+document.querySelectorAll('.buttons a').forEach(button => {
+    button.addEventListener('click', () => {
+        // Your click event handling code here
+    });
+
+    // Add touchstart event listener for touch-based devices
+    button.addEventListener('touchstart', () => {
+        // Your touch event handling code here
+    });
+});
+
