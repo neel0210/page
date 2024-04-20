@@ -8,7 +8,7 @@ window.addEventListener('pageshow', function(event) {
     if (!isPageLoadedFromCache(event)) {
         setTimeout(function() {
             hideLoading();
-        }, 2500);
+        }, 2700); // Adjusted delay to match the loading GIF duration
     }
 });
 
@@ -19,7 +19,7 @@ function showLoadingAndRedirect(loadingGifPath, redirectUrl) {
     // Wait for the loading GIF to be shown and then redirect after 3 seconds
     setTimeout(function() {
         window.location.href = redirectUrl; // Redirect to the linked page after 3 seconds
-    }, 2500);
+    }, 3000); // Adjusted delay to match the loading GIF duration
 }
 
 // Function to change loading GIF source
@@ -40,6 +40,22 @@ function hideLoading() {
     document.querySelector('main').classList.remove('hide');
 }
 
+// Pause the video when the window loses focus
+window.addEventListener('blur', function() {
+    var video = document.querySelector('video');
+    if(video) {
+        video.pause();
+    }
+});
+
+// Resume video playback when the window regains focus
+window.addEventListener('focus', function() {
+    var video = document.querySelector('video');
+    if(video) {
+        video.play();
+    }
+});
+
 // Add touch event listeners to the buttons
 document.querySelectorAll('.buttons a').forEach(button => {
     button.addEventListener('click', () => {
@@ -51,5 +67,3 @@ document.querySelectorAll('.buttons a').forEach(button => {
         // Your touch event handling code here
     });
 });
-
-
