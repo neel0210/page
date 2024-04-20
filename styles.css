@@ -11,6 +11,25 @@
     color: #fff;
 }
 
+/* Adjust layout for smaller screens */
+@media only screen and (max-width: 768px) {
+    /* Example: Adjust navigation menu for smaller screens */
+    .navbar ul {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    /* Example: Make the logo smaller on smaller screens */
+    .navbar .logo {
+        font-size: 1.5rem;
+    }
+
+    /* Example: Adjust the size of the loading video for smaller screens */
+    .loading-gif video {
+        width: 150px;
+    }
+}
+
 .responsive-gif {
     max-width: 100%;
     height: auto;
