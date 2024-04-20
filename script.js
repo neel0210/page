@@ -1,7 +1,16 @@
+// Function to check if the page is being loaded from the cache
+function isPageLoadedFromCache(event) {
+    return event.persisted;
+}
+
 // Wait for 2.7 seconds and then hide the loading GIF and show the main content
-setTimeout(function() {
-    hideLoading();
-}, 2500);
+window.addEventListener('pageshow', function(event) {
+    if (!isPageLoadedFromCache(event)) {
+        setTimeout(function() {
+            hideLoading();
+        }, 2500);
+    }
+});
 
 // Function to show loading GIF for 3 seconds before redirecting
 function showLoadingAndRedirect(loadingGifPath, redirectUrl) {
