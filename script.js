@@ -15,6 +15,8 @@ window.addEventListener('pageshow', function(event) {
     } else {
         // If the page is loaded from cache, hide the loading GIF immediately
         hideLoading();
+        // Reset the flag to indicate that the loading animation should be shown again
+        loadingAnimationShown = false;
     }
 });
 
