@@ -93,7 +93,9 @@ document.querySelectorAll('.buttons a').forEach(button => {
 
 
 // test
-
 window.addEventListener('pagehide', function(event) {
-    loadingAnimationShown = false;
+    if (!event.persisted) {
+        loadingAnimationShown = false;
+    }
 });
+
