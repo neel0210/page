@@ -90,3 +90,10 @@ document.querySelectorAll('.buttons a').forEach(button => {
         // Your touch event handling code here
     });
 });
+
+
+// test
+
+window.addEventListener('pagehide', function(event) {
+    loadingAnimationShown = false;
+});
