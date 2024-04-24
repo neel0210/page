@@ -3,7 +3,7 @@
     <div class="container">
       <a href="#" class="logo">GOKU's Paradise</a>
       <ul>
-        <li><a href="index.html">Home</a></li>
+        <li><a v-on:click="$router.push({ name: 'home' })">Home</a></li>
         <li>
           <a href="#" v-on:click="redirectToNewPage('https://github.com/neel0210')">Github</a>
         </li>

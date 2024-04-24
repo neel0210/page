@@ -11,21 +11,50 @@
       </div>
     </div>
     <div v-else>
-        <navbar/>
+      <navbar />
+      <main class="container hide">
+        <div class="page-content">
+          <div class="inner-content">
+            <h1 class="heading">Neel0210</h1>
+            <p></p>
+            <div class="buttons">
+              <a
+                href="#"
+                v-on:click="redirectToNewPage('https://www.instagram.com/neel_0210/')"
+                >Instagram</a
+              >
+              <a
+                href="#"
+                v-on:click="$router.push('/projects')"
+                >Projects</a
+              >
+              <a
+                href="#"
+                v-on:click="redirectToNewPage('https://twitter.com/Neel_0210')"
+                >X</a
+              >
+            </div>
+          </div>
+        </div>
+      </main>
     </div>
   </div>
 </template>
 
 <script>
-import Navbar from '@/components/navbar.vue';
+import Navbar from "@/components/navbar.vue";
 export default {
-  components: {Navbar},
-  data(){
+  components: { Navbar },
+  data() {
     return {
-        loading: true,
+      loading: true,
     };
   },
-  methods: {},
+  methods: {
+    redirectToNewPage(page) {
+        window.location.href = page;
+    }
+  },
   mounted() {
     setTimeout(() => {
       this.loading = false;
@@ -35,5 +64,4 @@ export default {
 </script>
 
 <style scoped>
-
 </style>
