@@ -1,7 +1,7 @@
 <template>
   <nav class="navbar">
     <div class="container">
-      <a href="#" class="logo">GOKU's Paradise</a>
+      <a href="#" class="logo">The Sharingan</a>
       <ul>
         <li><a v-on:click="$router.push({ name: 'home' })">Home</a></li>
         <li>
@@ -28,7 +28,7 @@ export default {
     //   this.isLoading = true;
     //   setTimeout(() => {
     //     window.location.href = page;
-    //   }, 4000); // 4 seconds
+    //   }, 3500); // 3.5 seconds
     },
   },
 };

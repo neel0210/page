@@ -25,16 +25,6 @@
               >
               <a
                 href="#"
-                v-on:click="$router.push('/projects')"
-                >Projects</a
-              >
-              <a
-                href="#"
-                v-on:click="$router.push('/connect')"
-                >connect</a
-              >			  
-              <a
-                href="#"
                 v-on:click="redirectToNewPage('https://twitter.com/Neel_0210')"
                 >X</a
               >
