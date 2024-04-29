@@ -10,7 +10,7 @@ import { RouterLink, RouterView } from 'vue-router'
 
 <style>
 .background {
-    background-image: url('assets/BIN/BGV_1.gif');
+    background-image: url('assets/BIN/BGV.gif');
     background-position: center;
     background-size: cover;
     overflow: hidden;
