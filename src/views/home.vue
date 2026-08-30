@@ -1,62 +1,60 @@
 <template>
-  <div>
-    <div v-if="loading" class="loading-gif">
-      <div class="sharingan">
-        <div class="inner-ring">
-          <div class="tomoe"></div>
-          <div class="tomoe"></div>
-          <div class="tomoe"></div>
-          <div class="circle"></div>
-        </div>
-      </div>
-    </div>
-    <div v-else>
-      <navbar />
-      <main class="container hide">
-        <div class="page-content">
-          <div class="inner-content">
-            <h1 class="heading">Neel0210</h1>
-            <p></p>
-            <div class="buttons">
-              <a
-                href="#"
-                v-on:click="$router.push('/connect')"
-                >Connect</a
-              >			  
-              <a
-                href="#"
-                v-on:click="$router.push('/projects')"
-                >Projects</a
-              >
-            </div>
+  <div class="page-wrapper">
+    <transition name="fade">
+      <SharinganLoader v-if="loading" />
+    </transition>
+
+    <navbar />
+
+    <main class="main-container">
+      <section class="hero-section">
+        <div class="hero-content">
+          <h1 class="hero-title">Neel0210</h1>
+          <p class="hero-subtitle">
+            Android Kernel &amp; ROM Developer &bull; Open Source Enthusiast &bull; Tech Explorer
+          </p>
+          <div class="hero-actions">
+            <router-link to="/connect" class="btn btn-primary">
+              Connect
+            </router-link>
+            <router-link to="/projects" class="btn btn-secondary">
+              Projects
+            </router-link>
           </div>
         </div>
-      </main>
-    </div>
+      </section>
+    </main>
   </div>
 </template>
 
 <script>
 import Navbar from "@/components/navbar.vue";
+import SharinganLoader from "@/components/SharinganLoader.vue";
+
 export default {
-  components: { Navbar },
+  name: "HomeView",
+  components: { Navbar, SharinganLoader },
   data() {
     return {
       loading: true,
     };
   },
-  methods: {
-    redirectToNewPage(page) {
-        window.location.href = page;
-    }
-  },
   mounted() {
     setTimeout(() => {
       this.loading = false;
-    }, 4000); // 4 seconds
+    }, 1400);
   },
 };
 </script>
 
 <style scoped>
+.fade-enter-active,
+.fade-leave-active {
+  transition: opacity 0.4s ease;
+}
+
+.fade-enter-from,
+.fade-leave-to {
+  opacity: 0;
+}
 </style>

@@ -4,7 +4,7 @@ import Projects from '../views/projects.vue'
 import Connect from '../views/connect.vue'
 
 const router = createRouter({
-  history: createWebHistory('/page/'),
+  history: createWebHistory(import.meta.env.BASE_URL),
   routes: [
     {
       path: '/',
@@ -20,8 +20,15 @@ const router = createRouter({
       path: '/connect',
       name: 'connect',
       component: Connect
+    },
+    {
+      path: '/:pathMatch(.*)*',
+      redirect: '/'
     }
-  ]
+  ],
+  scrollBehavior() {
+    return { top: 0, behavior: 'smooth' }
+  }
 })
 
 export default router

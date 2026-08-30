@@ -1,27 +1,18 @@
 <script setup>
-import { RouterLink, RouterView } from 'vue-router'
+import { RouterView } from 'vue-router'
+import bgGif from '@/assets/BIN/BGV.gif'
 </script>
 
 <template>
-<div class="background">
-</div>
-  <RouterView />
+  <div class="app-background" :style="{ backgroundImage: `url(${bgGif})` }"></div>
+  <div class="app-overlay"></div>
+  <router-view v-slot="{ Component }">
+    <transition name="page" mode="out-in">
+      <component :is="Component" />
+    </transition>
+  </router-view>
 </template>
 
 <style>
-.background {
-    background-image: url('assets/BIN/BGV.gif');
-    background-position: center;
-    background-size: cover;
-    overflow: hidden;
-    position: absolute;
-    left: 0;
-    top: 0;
-    height: 100%;
-    width: 100%;
-    object-fit: cover;
-    pointer-events: none;
-    z-index: -1;
-    transition: 1s;
-  }
+/* Page transition styles are defined in main.css */
 </style>
